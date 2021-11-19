@@ -22,20 +22,20 @@ int main()
     int choix;
     Personnage joueur; //init(nom, lvl, pdv, xpValue, atk);
 
-    cout << "Bonjour\nNom du personnage : ";
+    cout << "你好\n请输入角色的名字：";
     cin >> nom;
     joueur.init(nom, 1, 13, 5, 3);
-    cout << "Felicitation, le personnage " << joueur.getName() << " a été créé !\n";
+    cout << "恭喜你！角色 " << joueur.getName() << " 已经创建好了。\n";
 
     while(joueur.getLife() > 0) {
         Personnage nmy;
-        nmy.init("Ver de terre", 1, 5, 4, 2);
+        nmy.init("蚯蚓", 1, 5, 4, 2);
         nmy.setLife(5);
         choix = 0;
-        cout << "Un " + nmy.getName() + " apparaît !\n";
+        cout << "一个 " + nmy.getName() + " 出现了!\n";
         while(nmy.getLife() > 0 && joueur.getLife() > 0) {
             choix = 0;
-            cout << "Que faire ?\n1 : Attaquer\n2 : Fuir\nChoix : ";
+            cout << "该怎么办 ?\n1 : 攻击\n2 : 逃跑\n选择 : ";
             cin >> choix;
             clearConsole();
             switch(choix) {
@@ -46,14 +46,14 @@ int main()
                 }
                 break;
                 case 2:
-                cout << "Impossible pour le moment...";
+                cout << "现在不能逃跑...";
                 break;
             }
         }
     }
     if (joueur.getLife() < 0) {
-        cout << "You died.\nNAME : " << joueur.getName() << "\nLVL : " << joueur.getLvl() << "\n\n";
-        cout << "Thanks for playing." << endl;
+        cout << "你死了。\nNAME : " << joueur.getName() << "\nLVL : " << joueur.getLvl() << "\n\n";
+        cout << "感谢你能玩这个游戏！" << endl;
     }
     return 0;
 }
